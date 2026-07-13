@@ -65,24 +65,16 @@ L5 needs the self-reference of L3 **and** the runtime awareness of L4 **and** a 
 
 ## The Self-Evolution Loop (SEL) in one diagram
 
-```
-   ┌──────────── SENSE ────────────┐
-   │ internal: failing tests,      │
-   │ crashes, SLO breaches,        │
-   │ security findings, telemetry  │──┐
-   │ external: EARS / free text    │  │
-   └───────────────────────────────┘  │
-                                       ▼
-   SPECIFY → SYNTHESIZE → VERIFY → SELF-INTEGRATE
-   (structured   (brownfield   (Build→SA→   (human gate →
-    BR/FR/NFR)    → addon)      E2E→SysE2E)  signed staged
-                                             self-update +
-                                             rollback)
-                                       │
-        the new build authors ◄────────┘
-        the next cycle (self-hosting)
-
-   Guardrail: CMS coordination state is AI-immutable (read-only).
+```mermaid
+flowchart LR
+    INT["Internal signals<br/>failing tests · crashes<br/>SLO breaches · telemetry"] --> SENSE
+    EXT["External signals<br/>EARS · free text"] --> SENSE
+    SENSE["SENSE"] --> SPEC["SPECIFY<br/>structured BR/FR/NFR"]
+    SPEC --> SYN["SYNTHESIZE<br/>brownfield → addon"]
+    SYN --> VER["VERIFY<br/>Build → SA → E2E → System E2E"]
+    VER --> INTG["SELF-INTEGRATE<br/>human gate → signed staged<br/>self-update + rollback"]
+    INTG -. "the new build authors the next cycle (self-hosting)" .-> SENSE
+    INTG -.-> GUARD["Guardrail: CMS coordination state is AI-immutable (read-only)"]
 ```
 
 ---

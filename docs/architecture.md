@@ -77,11 +77,11 @@ These map to documented failure modes in the literature: objective-hacking (DGM)
 
 ```mermaid
 flowchart TB
-    L0[L0 None\ntraditional software] --> L1[L1 Assisted repair/authoring\nCopilot · SWE-bench agents]
-    L1 --> L2[L2 Closed-loop component repair\nAutomated Program Repair]
-    L2 --> L3[L3 Self-referential agent improvement\nSTOP · Gödel Agent · ADAS · DGM · SICA · AlphaEvolve]
-    L2 --> L4[L4 Self-adaptive platform runtime\nAutonomic computing · MAPE-K]
-    L3 --> L5[L5 Self-evolving platform\nrequirements→verified→deployed self-change\nincl. authoring substrate]
+    L0[L0 None<br/>traditional software] --> L1[L1 Assisted repair/authoring<br/>Copilot · SWE-bench agents]
+    L1 --> L2[L2 Closed-loop component repair<br/>Automated Program Repair]
+    L2 --> L3[L3 Self-referential agent improvement<br/>STOP · Gödel Agent · ADAS · DGM · SICA · AlphaEvolve]
+    L2 --> L4[L4 Self-adaptive platform runtime<br/>Autonomic computing · MAPE-K]
+    L3 --> L5[L5 Self-evolving platform<br/>requirements→verified→deployed self-change<br/>incl. authoring substrate]
     L4 --> L5
     style L5 fill:#0b7285,color:#ffffff
 ```

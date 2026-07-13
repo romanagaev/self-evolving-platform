@@ -170,16 +170,16 @@ We generalize MAPE-K [3] so that the *managed element* is the platform's own sou
 ```mermaid
 flowchart LR
     subgraph SENSE["1. SENSE (Monitor)"]
-      D[Internal signals\nfailing tests · crashes · SLO breaches · security findings · telemetry]
-      X[External signals\nEARS requirements · free text: tickets/email/Confluence/PDF]
+      D[Internal signals<br/>failing tests · crashes · SLO breaches · security findings · telemetry]
+      X[External signals<br/>EARS requirements · free text: tickets/email/Confluence/PDF]
     end
     subgraph SPEC["2. SPECIFY (Analyze)"]
-      RQ[Requirement synthesis\nstructured BR/FR/NFR + traceability IDs]
-      TR[Impact analysis\nagainst platform RAG + traceability graph]
+      RQ[Requirement synthesis<br/>structured BR/FR/NFR + traceability IDs]
+      TR[Impact analysis<br/>against platform RAG + traceability graph]
     end
     subgraph SYN["3. SYNTHESIZE (Plan+Execute)"]
       DS[Design delta]
-      CG[Code + tests + CI/CD delta\nbrownfield-analyze → addon-graft]
+      CG[Code + tests + CI/CD delta<br/>brownfield-analyze → addon-graft]
     end
     subgraph VER["4. VERIFY"]
       V1[Build + unit ≥80%]
@@ -189,9 +189,9 @@ flowchart LR
     end
     subgraph INT["5. SELF-INTEGRATE"]
       AP[Human approval gate]
-      REL[Signed, staged self-update\n+ rollback]
+      REL[Signed, staged self-update<br/>+ rollback]
     end
-    K[(Knowledge:\nplatform RAG index · traceability · CMS state · telemetry)]
+    K[(Knowledge:<br/>platform RAG index · traceability · CMS state · telemetry)]
 
     D --> RQ
     X --> RQ
