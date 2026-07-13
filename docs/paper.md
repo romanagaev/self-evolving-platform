@@ -170,38 +170,38 @@ We generalize MAPE-K [3] so that the *managed element* is the platform's own sou
 ```mermaid
 flowchart LR
     subgraph SENSE["1. SENSE (Monitor)"]
-      D[Internal signals<br/>failing tests · crashes · SLO breaches · security findings · telemetry]
-      X[External signals<br/>EARS requirements · free text: tickets/email/Confluence/PDF]
+      D["Internal signals<br/>failing tests · crashes · SLO breaches · security findings · telemetry"]
+      X["External signals<br/>EARS requirements · free text: tickets/email/Confluence/PDF"]
     end
     subgraph SPEC["2. SPECIFY (Analyze)"]
-      RQ[Requirement synthesis<br/>structured BR/FR/NFR + traceability IDs]
-      TR[Impact analysis<br/>against platform RAG + traceability graph]
+      RQ["Requirement synthesis<br/>structured BR/FR/NFR + traceability IDs"]
+      TR["Impact analysis<br/>against platform RAG + traceability graph"]
     end
-    subgraph SYN["3. SYNTHESIZE (Plan+Execute)"]
-      DS[Design delta]
-      CG[Code + tests + CI/CD delta<br/>brownfield-analyze → addon-graft]
+    subgraph SYN["3. SYNTHESIZE (Plan + Execute)"]
+      DS["Design delta"]
+      CG["Code + tests + CI/CD delta<br/>brownfield-analyze to addon-graft"]
     end
     subgraph VER["4. VERIFY"]
-      V1[Build + unit ≥80%]
-      V15[Static analysis / security gate]
-      V2[Project E2E]
-      V3[System E2E]
+      V1["Build + unit >=80%"]
+      V15["Static analysis / security gate"]
+      V2["Project E2E"]
+      V3["System E2E"]
     end
     subgraph INT["5. SELF-INTEGRATE"]
-      AP[Human approval gate]
-      REL[Signed, staged self-update<br/>+ rollback]
+      AP["Human approval gate"]
+      REL["Signed, staged self-update + rollback"]
     end
-    K[(Knowledge:<br/>platform RAG index · traceability · CMS state · telemetry)]
+    K[("Knowledge:<br/>platform RAG index · traceability · CMS state · telemetry")]
 
     D --> RQ
     X --> RQ
     RQ --> TR --> DS --> CG --> V1 --> V15 --> V2 --> V3 --> AP --> REL
-    REL -. new version of the platform authors the next cycle .-> D
+    REL -.->|"new version of the platform authors the next cycle"| D
     K -.-> RQ
     K -.-> TR
     K -.-> CG
-    V3 -. defects found .-> D
-    AP -. rejected/changes requested .-> RQ
+    V3 -.->|"defects found"| D
+    AP -.->|"rejected / changes requested"| RQ
 ```
 
 Each phase maps to an existing, measured LLMGen workflow: Sense/Specify to Use-Case Analysis and requirements ingestion (JIRA/Confluence/PDF/free text) [1]; the code path to Brownfield analysis of the platform repo followed by an Addon graft [2]; Verify to the four-tier verification pipeline (Build → Static Analysis → Project E2E → System E2E) [1]; Self-Integrate to the Tier 3 signed, staged, rollback-capable self-update [2]. The novelty is not any single phase but the **closed loop** whose managed element is the platform itself.

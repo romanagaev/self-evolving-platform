@@ -36,8 +36,8 @@ This document details the governed reference architecture for platform self-evol
 sequenceDiagram
     participant SRC as Signal source (defect OR EARS/free-text)
     participant SEL as Self-Evolution Component
-    participant RAG as Platform Knowledge (RAG + traceability + CMS[read-only])
-    participant SDLC as LLMGen SDLC (brownfield→addon)
+    participant RAG as Platform Knowledge (RAG, traceability, CMS read-only)
+    participant SDLC as LLMGen SDLC (brownfield to addon)
     participant VER as 4-tier Verification
     participant HUM as Human Approver
     participant REL as Signed Self-Update
@@ -77,11 +77,11 @@ These map to documented failure modes in the literature: objective-hacking (DGM)
 
 ```mermaid
 flowchart TB
-    L0[L0 None<br/>traditional software] --> L1[L1 Assisted repair/authoring<br/>Copilot · SWE-bench agents]
-    L1 --> L2[L2 Closed-loop component repair<br/>Automated Program Repair]
-    L2 --> L3[L3 Self-referential agent improvement<br/>STOP · Gödel Agent · ADAS · DGM · SICA · AlphaEvolve]
-    L2 --> L4[L4 Self-adaptive platform runtime<br/>Autonomic computing · MAPE-K]
-    L3 --> L5[L5 Self-evolving platform<br/>requirements→verified→deployed self-change<br/>incl. authoring substrate]
+    L0["L0 None<br/>traditional software"] --> L1["L1 Assisted repair/authoring<br/>Copilot · SWE-bench agents"]
+    L1 --> L2["L2 Closed-loop component repair<br/>Automated Program Repair"]
+    L2 --> L3["L3 Self-referential agent improvement<br/>STOP · Gödel Agent · ADAS · DGM · SICA · AlphaEvolve"]
+    L2 --> L4["L4 Self-adaptive platform runtime<br/>Autonomic computing · MAPE-K"]
+    L3 --> L5["L5 Self-evolving platform<br/>requirements to verified to deployed self-change<br/>incl. authoring substrate"]
     L4 --> L5
     style L5 fill:#0b7285,color:#ffffff
 ```

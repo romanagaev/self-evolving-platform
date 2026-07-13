@@ -73,7 +73,7 @@ flowchart LR
     SPEC --> SYN["SYNTHESIZE<br/>brownfield → addon"]
     SYN --> VER["VERIFY<br/>Build → SA → E2E → System E2E"]
     VER --> INTG["SELF-INTEGRATE<br/>human gate → signed staged<br/>self-update + rollback"]
-    INTG -. "the new build authors the next cycle (self-hosting)" .-> SENSE
+    INTG -.->|"new build authors the next cycle (self-hosting)"| SENSE
     INTG -.-> GUARD["Guardrail: CMS coordination state is AI-immutable (read-only)"]
 ```
 
