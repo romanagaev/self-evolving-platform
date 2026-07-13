@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "The Self-Evolving Platform: When a Level-5 AI Platform-Engineering System Generates a Substrate That Improves Itself From Within"
+type: article
+authors:
+  - family-names: "Agaev"
+    given-names: "Roman"
+year: 2026
+license: CC-BY-4.0
+repository-code: "https://github.com/romanagaev/self-evolving-platform"
+abstract: >-
+  A position, feasibility, and reference-architecture study of platform
+  self-evolution: a software platform that converts requirements — inferred
+  from its own defects and misfunction, or supplied externally as EARS-structured
+  or free natural-language text — into verified, deployed changes to itself,
+  including the environment in which it is authored. The work argues this
+  capability is enabled by a Level-5 platform-engineering AI (per the LLMGen
+  benchmark hierarchy), proposes a Levels of Self-Evolution (L0-L5) ontology,
+  and specifies the governed Self-Evolution Loop (SEL) as an SDLC-native
+  generalization of the MAPE-K control loop, with a falsifiable evaluation.
+keywords:
+  - self-evolving software
+  - recursive self-improvement
+  - autonomic computing
+  - self-adaptive systems
+  - AI platform engineering
+  - self-hosting
+  - automated program repair
+  - requirements engineering
+  - EARS
+  - AI governance

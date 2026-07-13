@@ -1,0 +1,26 @@
+# Social media drafts (kept locally, not published to repo)
+linkedin-article.md
+reddit-post.md
+x-twitter-thread.md
+devto-hashnode-post.md
+arxiv-paper.md
+github-readme.md
+
+# Submission metadata (internal)
+ssrn-submission.md
+techrxiv-submission.md
+PUBLISHING_GUIDE.md
+
+# Pilot data (raw results kept locally until curated)
+docs/pilot-results.csv
+docs/pilot-governance.csv
+
+# Build artifacts
+docs/*.docx
+docs/*.pdf
+docs/convert_to_pdf.py
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+.vscode/
